@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+    <title>Cadastro de Planeta</title>
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+    <a href="index.xhtml" style="margin: 50px 320px 10px 0">
+        <p:commandButton value="Home" type="button" />
+    </a>
+    <h:form>
+        <div class="container_cadastro">
+            <h2 style="color: black">Cadastro de Planeta</h2>
+            <p>
+                <label>Nome:</label>
+                <p:inputText id="nome" value="#{planetaController.planeta.nome}" style="margin-left: 10px" required="true"/>
+            </p>
+
+            <p>
+                <label>Clima:</label>
+                <p:inputText id="clima" value="#{planetaController.planeta.clima}" style="margin-left: 10px" required="true"/>
+            </p>
+
+            <p>
+                <label>Terreno:</label>
+                <p:inputText id="terreno" value="#{planetaController.planeta.terreno}" styleClass="input-inline" required="true"/>
+            </p>
+
+            <p>
+                <p:commandButton value ="Cadastrar" type="submit" action="#{planetaController.salvarPlaneta(planetaController.planeta)}" />
+            </p>
+        </div>
+    </h:form>
+</h:body>
+</html>

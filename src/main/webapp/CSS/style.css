@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("../assets/universo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_index{
+    width: 90vw;
+    min-height: 100vh;
+    background-image: url("../assets/universo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagem_logo{
+    margin: 50px 0 50px 0;
+    width: 300px;
+    height: 170px;
+    transform: translateY(0px);
+    animation: float 5s ease-in-out infinite;
+    animation-name: flutuacao;
+}
+
+@keyframes flutuacao {
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.container{
+    width: 60vw;
+    min-height: 40vh;
+    box-shadow: 2px 2px 6px gray;
+    background-color: azure;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+}
+
+h1, h2{
+    color: azure;
+    font-size: 36px;
+}
+
+.container h3, p{
+    margin: 20px 0 20px 0;
+}
+
+hr{
+    box-shadow: 2px 2px 6px gray;
+}
+
+.container_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    flex-direction: column;
+    position: relative;
+}
+
+.link_cadastro, button_cadastrar_home{
+    position: absolute;
+    left: 105px;
+    bottom: 10px;
+}
+
+.container_cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: azure;
+    box-shadow: 2px 2px 6px gray;
+}
+
+.container_cadastro label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.input-inline {
+    display: inline-block;
+    width: auto;
+
+}
+
+

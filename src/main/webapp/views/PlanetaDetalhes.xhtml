@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Detalhes do Planeta</title>
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+    <h1 style="margin: 50px 0 10px 0">Detalhes do Planeta</h1>
+    <h:form>
+        <div class="container">
+            <h3>Planeta Encontrado:</h3>
+            <h3>Nome:</h3>
+            <p>#{planetaController.buscarPlanetaPorId(param['id']).nome}</p>
+            <hr></hr>
+            <h3>Clima:</h3>
+            <p>#{planetaController.buscarPlanetaPorId(param['id']).clima}</p>
+            <hr></hr>
+            <h3>Terreno:</h3>
+            <p>#{planetaController.buscarPlanetaPorId(param['id']).terreno}</p>
+            <hr></hr>
+            <h3>Aparições:</h3>
+            <p>#{planetaController.buscarPlanetaPorId(param['id']).aparicoes}</p>
+        </div>
+        <a href="index.xhtml">
+            <p:commandButton value="Voltar" type="button" />
+        </a>
+    </h:form>
+</h:body>
+</html>

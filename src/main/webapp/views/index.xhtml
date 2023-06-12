@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Lista de Planetas</title>
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+    <div class="container_index">
+        <div class="container_logo">
+            <img src="../assets/starwars_logo-removebg-preview-removebg-preview.png" alt="" class="imagem_logo"></img>
+            <h2 style="margin-bottom: 10px">Lista de Planetas</h2>
+            <a href="PlanetaCadastro.xhtml" class="link_cadastro">
+                <p:commandButton value="Cadastrar" type="button" styleClass="button_cadastrar_home"/>
+            </a>
+        </div>
+        <h:form>
+            <p:dataTable id="planetasTable" value="#{planetaController.listarPlanetas()}" var="planeta" style="margin: 0 10px 0 10px; border-radius: 8px">
+                <p:column headerText="Nome">
+                    <a href="PlanetaDetalhesNome.xhtml?nome=#{planeta.nome}" style="text-decoration: none">#{planeta.nome}</a>
+                </p:column>
+                <p:column headerText="Clima">
+                    #{planeta.clima}
+                </p:column>
+                <p:column headerText="Terreno">
+                    #{planeta.terreno}
+                </p:column>
+                <p:column headerText="Aparições em filmes">
+                    #{planeta.aparicoes}
+                </p:column>
+                <p:column headerText="Ações">
+                    <p:commandButton value="Excluir" type="submit" action="#{planetaController.excluirPlaneta(planeta.id)}"
+                                     process="@this" update="planetasTable" style="background-color: red">
+                    </p:commandButton>
+                </p:column>
+                <p:column headerText="Detalhes">
+                    <a href="PlanetaDetalhes.xhtml?id=#{planeta.id}">
+                        <p:commandButton value="Detalhes" type="button" />
+                    </a>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </div>
+</h:body>
+</html>
